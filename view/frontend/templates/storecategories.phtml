@@ -5,11 +5,13 @@ $categoires = $block->getChildCategories($categoryId);
 
 
 foreach ($categoires as $cate) {
+?>
+<h2><?php echo $cate->getName() .'<br />'; ?></h2>
 
-echo $cate->getName() .'<br />';
+<?php
     $products = $block->getCategoryProducts($cate->getId());
     foreach ($products as $pr)
     {
-        echo $pr->getName() .'<br>';
+        echo $pr->getName().'<br>';
     }
 }
