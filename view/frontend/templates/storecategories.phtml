@@ -1,1 +1,15 @@
-<p>hahahahahaha</p>
+<?php
+
+$categoryId = 41; // fetching products in category id 6
+$categoires = $block->getChildCategories($categoryId);
+
+
+foreach ($categoires as $cate) {
+
+echo $cate->getName() .'<br />';
+    $products = $block->getCategoryProducts($cate->getId());
+    foreach ($products as $pr)
+    {
+        echo $pr->getName() .'<br>';
+    }
+}
